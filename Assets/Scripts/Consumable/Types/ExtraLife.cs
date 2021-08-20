@@ -4,7 +4,8 @@ using System.Collections;
 
 public class ExtraLife : Consumable
 {
-    protected const int k_MaxLives = 3;
+    //changed from 3 to 5
+    protected const int k_MaxLives = 5;
     protected const int k_CoinValue = 10;
 
     public override string GetConsumableName()

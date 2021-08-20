@@ -75,7 +75,8 @@ public class GameState : AState
     protected bool m_AdsInitialised = false;
     protected bool m_GameoverSelectionDone = false;
 
-    protected int k_MaxLives = 3;
+    //Change Max Lives from 3 to 5
+    protected int k_MaxLives = 5;
 
     protected bool m_IsTutorial; //Tutorial is a special run that don't chance section until the tutorial step is "validated".
     protected int m_TutorialClearedObstacle = 0;
@@ -89,6 +90,7 @@ public class GameState : AState
     {
         m_CountdownRectTransform = countdownText.GetComponent<RectTransform>();
 
+        //having trouble getting the extra hearts to appear even after manually creating more heart images
         m_LifeHearts = new Image[k_MaxLives];
         for (int i = 0; i < k_MaxLives; ++i)
         {
@@ -335,7 +337,8 @@ public class GameState : AState
         coinText.text = trackManager.characterController.coins.ToString();
         premiumText.text = trackManager.characterController.premium.ToString();
 
-		for (int i = 0; i < 3; ++i)
+        //fix for transform error 
+		for (int i = 0; i < k_MaxLives; ++i)
 		{
 
 			if(trackManager.characterController.currentLife > i)
