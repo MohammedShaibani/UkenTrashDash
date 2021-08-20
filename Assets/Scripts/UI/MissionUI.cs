@@ -16,7 +16,8 @@ public class MissionUI : MonoBehaviour
         foreach (Transform t in missionPlace)
             Addressables.ReleaseInstance(t.gameObject);
 
-        for(int i = 0; i < 3; ++i)
+        //Uken Games QA Engineering Edit, changed i < 3 to i < 4 to show 4 active missionsat once
+        for(int i = 0; i < 4; ++i)
         {
             if (PlayerData.instance.missions.Count > i)
             {
